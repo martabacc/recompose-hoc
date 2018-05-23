@@ -39,6 +39,7 @@
     "react-navigation": "^1.0.0-beta.7",
     "react-navigation-redux-helpers": "^1.1.1",
     "react-redux": "^5.0.2",
+    "recompose": "^0.27.1",
     "redux": "^3.6.0",
     "redux-persist": "^4.1.0",
     "redux-saga": "^0.15.6",
@@ -47,7 +48,7 @@
   },
   "devDependencies": {
     "@storybook/addon-storyshots": "^3.2.3",
-    "@storybook/react-native": "^3.2.3",
+    "@storybook/react-native": "^3.4.5",
     "babel-eslint": "7.1.1",
     "babel-jest": "22.4.4",
     "babel-plugin-ignite-ignore-reactotron": "^0.3.0",
@@ -67,7 +68,12 @@
     "reactotron-redux": "^1.11.1",
     "reactotron-redux-saga": "^1.11.1",
     "snazzy": "^7.1.1",
-    "standard": "10.0.2"
+    "standard": "10.0.2",
+    "@storybook/addon-actions": "^3.4.5",
+    "@storybook/addon-links": "^3.4.5",
+    "@storybook/addons": "^3.4.5",
+    "babel-core": "^6.26.3",
+    "babel-runtime": "^6.26.0"
   },
   "jest": {
     "testMatch": [
