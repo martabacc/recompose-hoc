@@ -24,6 +24,7 @@ const orchestrator = (options = {}) => (Component) => {
   }
 
 
+
   return compose(...enhancers)(Component)
 }
 
