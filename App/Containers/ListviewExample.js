@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import withMagic  from "../../with-magic";
 import { BackHandler, FlatList } from 'react-native'
 import { List, ListItem, Text, View, Container, Header, Title, Button, Left, Right, Body, Icon } from "native-base";
 // import Icon from 'react-native-vector-icons/Ionicons'
@@ -37,15 +38,6 @@ class ListviewExample extends React.Component {
     );
   };
 
-  componentDidMount(){
-    const goBackAction = this.props.navigation.goBack;
-    BackHandler.addEventListener('hardwareBackPress', goBackAction);
-  }
-
-  componentWillUnmount(){
-    const goBackAction = this.props.navigation.goBack;
-    BackHandler.removeEventListener('hardwareBackPress', goBackAction);
-  }
   render() {
     return (
       <Container>
@@ -66,4 +58,9 @@ class ListviewExample extends React.Component {
   }
 }
 
-export default connect()(ListviewExample);
+export default withMagic({
+  isGoBack: true,
+  isAlertedOnNoConnection: false
+})(ListviewExample);
+
+//export default connect()(ListviewExample);
