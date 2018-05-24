@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { FlatList } from "react-native";
+import { BackHandler, FlatList } from 'react-native'
 import { List, ListItem, Text, View, Container, Header, Title, Button, Left, Right, Body, Icon } from "native-base";
 // import Icon from 'react-native-vector-icons/Ionicons'
 
@@ -36,6 +36,16 @@ class ListviewExample extends React.Component {
       </ListItem>
     );
   };
+
+  componentDidMount(){
+    const goBackAction = this.props.navigation.goBack;
+    BackHandler.addEventListener('hardwareBackPress', goBackAction);
+  }
+
+  componentWillUnmount(){
+    const goBackAction = this.props.navigation.goBack;
+    BackHandler.removeEventListener('hardwareBackPress', goBackAction);
+  }
   render() {
     return (
       <Container>
@@ -55,10 +65,5 @@ class ListviewExample extends React.Component {
     );
   }
 }
-const mapStateToProps = state => {
-  return {
-    // ...redux state to props here
-  };
-};
 
-export default connect(mapStateToProps)(ListviewExample);
+export default connect()(ListviewExample);
